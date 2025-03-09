@@ -201,3 +201,113 @@ p {
         opacity: 0;
     }
 }
+/* Balloon styles */
+.balloons-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 50px;
+    border-radius: 50%;
+    animation: floatUp linear forwards;
+}
+
+.balloon-string {
+    position: absolute;
+    width: 1px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 50px;
+    left: 20px;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-120vh) rotate(20deg);
+    }
+}
+
+/* Special message styles */
+.special-message {
+    font-size: 1.4rem;
+    color: #ff4f4f;
+    margin: 30px 0;
+    min-height: 60px;
+    font-weight: bold;
+    border-top: 2px dashed #ff4f4f;
+    border-bottom: 2px dashed #ff4f4f;
+    padding: 15px;
+    opacity: 0.9;
+}
+
+.special-message-done {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Sparkle styles */
+.sparkles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle infinite;
+}
+
+.sparkle:before, .sparkle:after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.sparkle:before {
+    transform: rotate(45deg);
+}
+
+.sparkle:after {
+    transform: rotate(90deg);
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
