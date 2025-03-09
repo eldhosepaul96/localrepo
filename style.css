@@ -242,7 +242,7 @@ p {
 /* Special message styles */
 .special-message {
     font-size: 1.4rem;
-    color: #ff4f4f;
+    color: #000000;
     margin: 30px 0;
     min-height: 60px;
     font-weight: bold;
